@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E8BEC7018BA9DE4009E36C5 /* NCNetworkSessionUploadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BEC6F18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.m */; };
+		1E8BEC7118BB561F009E36C5 /* NCNetworkSessionUploadTask.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E8BEC6E18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.h */; };
+		1E8BEC7418BB8373009E36C5 /* NCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BEC7318BB8373009E36C5 /* NCFileManager.m */; };
+		1E9D78ED18AB8C8700ADD41C /* NCNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D78EC18AB8C8700ADD41C /* NCNetworkRequest.m */; };
+		1E9D790918AD031000ADD41C /* NCNetworkSessionDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D790818AD031000ADD41C /* NCNetworkSessionDataTask.m */; };
+		1E9F440118A2518C008164A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9F440018A2518C008164A4 /* Foundation.framework */; };
+		1E9F440F18A2518C008164A4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9F440E18A2518C008164A4 /* XCTest.framework */; };
+		1E9F441018A2518C008164A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9F440018A2518C008164A4 /* Foundation.framework */; };
+		1E9F441218A2518C008164A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9F441118A2518C008164A4 /* UIKit.framework */; };
+		1E9F441518A2518C008164A4 /* libNemoConnect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9F43FD18A2518C008164A4 /* libNemoConnect.a */; };
+		1E9F441B18A2518C008164A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E9F441918A2518C008164A4 /* InfoPlist.strings */; };
+		1E9F441D18A2518C008164A4 /* Nemo_Connect_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F441C18A2518C008164A4 /* Nemo_Connect_Tests.m */; };
+		1E9F442F18A25274008164A4 /* NCWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F442E18A25274008164A4 /* NCWebService.m */; };
+		1E9F443218A2528E008164A4 /* NCWebService+DynamicMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F443118A2528E008164A4 /* NCWebService+DynamicMethod.m */; };
+		1EA8087B18B4E8A100FB3963 /* NemoConnect.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EA8087818B4E7E000FB3963 /* NemoConnect.h */; };
+		1EAAE1C018AE2452004CCE2E /* NCJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAE1BF18AE2452004CCE2E /* NCJSONSerializer.m */; };
+		1EAAE1C318AE25C2004CCE2E /* NCSerializationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAE1C218AE25C2004CCE2E /* NCSerializationHandler.m */; };
+		1EAAE1CE18AE5E07004CCE2E /* NCDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAE1CD18AE5E07004CCE2E /* NCDispatchFunctions.m */; };
+		1ED2CAB618BBC8430069AB4F /* NCFileManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E8BEC7218BB8373009E36C5 /* NCFileManager.h */; };
+		1ED8E8CC18B49DF00087972D /* NCDispatchFunctions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EAAE1CC18AE5E07004CCE2E /* NCDispatchFunctions.h */; };
+		1ED8E8CD18B49DF00087972D /* NCWebService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E9F442D18A25274008164A4 /* NCWebService.h */; };
+		1ED8E8CE18B49DF00087972D /* NCWebService+DynamicMethod.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E9F443018A2528E008164A4 /* NCWebService+DynamicMethod.h */; };
+		1ED8E8CF18B49DF00087972D /* NCWebService+Extensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EF96DCB18A26C4A003CD69F /* NCWebService+Extensions.h */; };
+		1ED8E8D018B49DF00087972D /* NCWebServiceParameterParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EF96DD618A27FB4003CD69F /* NCWebServiceParameterParser.h */; };
+		1ED8E8D118B49DF00087972D /* NCCancelable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EAAE1BB18AE1150004CCE2E /* NCCancelable.h */; };
+		1ED8E8D218B49DF00087972D /* NCNetworkTask.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E9D78FA18AD018D00ADD41C /* NCNetworkTask.h */; };
+		1ED8E8D318B49DF00087972D /* NCNetworkSessionDataTask.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E9D790718AD031000ADD41C /* NCNetworkSessionDataTask.h */; };
+		1ED8E8D518B49DF00087972D /* NCNetworkRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E9D78EB18AB8C8700ADD41C /* NCNetworkRequest.h */; };
+		1ED8E8D618B49DF00087972D /* NSObject+DictionaryRepresentation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EF96E1318A2CAEA003CD69F /* NSObject+DictionaryRepresentation.h */; };
+		1ED8E8D718B49DF00087972D /* NCSerializer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EAAE1BC18AE230A004CCE2E /* NCSerializer.h */; };
+		1ED8E8D818B49DF00087972D /* NCJSONSerializer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EAAE1BE18AE2452004CCE2E /* NCJSONSerializer.h */; };
+		1ED8E8D918B49DF00087972D /* NCSerializationHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EAAE1C118AE25C2004CCE2E /* NCSerializationHandler.h */; };
+		1EDAFABD18FD79BA00B3D263 /* NCNetworkSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDAFABC18FD79BA00B3D263 /* NCNetworkSessionManager.m */; };
+		1EDAFAC018FE5DB000B3D263 /* NCBasicAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDAFABF18FE5DB000B3D263 /* NCBasicAuthentication.m */; };
+		1EDAFACA18FFC98A00B3D263 /* NCNetworkSessionManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDAFAC918FFC98A00B3D263 /* NCNetworkSessionManagerDelegate.m */; };
+		1EDAFACF18FFF95200B3D263 /* NCAuthentication.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EDAFAB718FD5C7800B3D263 /* NCAuthentication.h */; };
+		1EDAFAD018FFFD0600B3D263 /* NCBasicAuthentication.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EDAFABE18FE5DB000B3D263 /* NCBasicAuthentication.h */; };
+		1EF96DCD18A26C4A003CD69F /* NCWebService+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96DCC18A26C4A003CD69F /* NCWebService+Extensions.m */; };
+		1EF96DD818A27FB4003CD69F /* NCWebServiceParameterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96DD718A27FB4003CD69F /* NCWebServiceParameterParser.m */; };
+		1EF96E1518A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96E1418A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m */; };
+		CF15501A1A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E9F441318A2518C008164A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E9F43F518A2518C008164A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E9F43FC18A2518C008164A4;
+			remoteInfo = "Nemo iOS Framework";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1E9F43FB18A2518C008164A4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				1EDAFAD018FFFD0600B3D263 /* NCBasicAuthentication.h in CopyFiles */,
+				1ED2CAB618BBC8430069AB4F /* NCFileManager.h in CopyFiles */,
+				1EA8087B18B4E8A100FB3963 /* NemoConnect.h in CopyFiles */,
+				1ED8E8CC18B49DF00087972D /* NCDispatchFunctions.h in CopyFiles */,
+				1E8BEC7118BB561F009E36C5 /* NCNetworkSessionUploadTask.h in CopyFiles */,
+				1ED8E8CD18B49DF00087972D /* NCWebService.h in CopyFiles */,
+				1ED8E8CE18B49DF00087972D /* NCWebService+DynamicMethod.h in CopyFiles */,
+				1ED8E8CF18B49DF00087972D /* NCWebService+Extensions.h in CopyFiles */,
+				1ED8E8D018B49DF00087972D /* NCWebServiceParameterParser.h in CopyFiles */,
+				1ED8E8D118B49DF00087972D /* NCCancelable.h in CopyFiles */,
+				1ED8E8D218B49DF00087972D /* NCNetworkTask.h in CopyFiles */,
+				1ED8E8D318B49DF00087972D /* NCNetworkSessionDataTask.h in CopyFiles */,
+				1ED8E8D518B49DF00087972D /* NCNetworkRequest.h in CopyFiles */,
+				1ED8E8D618B49DF00087972D /* NSObject+DictionaryRepresentation.h in CopyFiles */,
+				1ED8E8D718B49DF00087972D /* NCSerializer.h in CopyFiles */,
+				1ED8E8D818B49DF00087972D /* NCJSONSerializer.h in CopyFiles */,
+				1EDAFACF18FFF95200B3D263 /* NCAuthentication.h in CopyFiles */,
+				1ED8E8D918B49DF00087972D /* NCSerializationHandler.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1E8BEC6E18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkSessionUploadTask.h; sourceTree = "<group>"; };
+		1E8BEC6F18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkSessionUploadTask.m; sourceTree = "<group>"; };
+		1E8BEC7218BB8373009E36C5 /* NCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NCFileManager.h; path = Sources/NCFileManager.h; sourceTree = "<group>"; };
+		1E8BEC7318BB8373009E36C5 /* NCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NCFileManager.m; path = Sources/NCFileManager.m; sourceTree = "<group>"; };
+		1E9D78EB18AB8C8700ADD41C /* NCNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkRequest.h; sourceTree = "<group>"; };
+		1E9D78EC18AB8C8700ADD41C /* NCNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkRequest.m; sourceTree = "<group>"; };
+		1E9D78FA18AD018D00ADD41C /* NCNetworkTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NCNetworkTask.h; sourceTree = "<group>"; };
+		1E9D790718AD031000ADD41C /* NCNetworkSessionDataTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkSessionDataTask.h; sourceTree = "<group>"; };
+		1E9D790818AD031000ADD41C /* NCNetworkSessionDataTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkSessionDataTask.m; sourceTree = "<group>"; };
+		1E9F43FD18A2518C008164A4 /* libNemoConnect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNemoConnect.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E9F440018A2518C008164A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1E9F440418A2518C008164A4 /* Nemo Connect-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nemo Connect-Prefix.pch"; sourceTree = "<group>"; };
+		1E9F440D18A2518C008164A4 /* Nemo Connect Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nemo Connect Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E9F440E18A2518C008164A4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1E9F441118A2518C008164A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1E9F441818A2518C008164A4 /* Nemo Connect Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Nemo Connect Tests-Info.plist"; sourceTree = "<group>"; };
+		1E9F441A18A2518C008164A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1E9F441C18A2518C008164A4 /* Nemo_Connect_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nemo_Connect_Tests.m; sourceTree = "<group>"; };
+		1E9F442D18A25274008164A4 /* NCWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWebService.h; sourceTree = "<group>"; };
+		1E9F442E18A25274008164A4 /* NCWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCWebService.m; sourceTree = "<group>"; };
+		1E9F443018A2528E008164A4 /* NCWebService+DynamicMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NCWebService+DynamicMethod.h"; sourceTree = "<group>"; };
+		1E9F443118A2528E008164A4 /* NCWebService+DynamicMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NCWebService+DynamicMethod.m"; sourceTree = "<group>"; wrapsLines = 0; };
+		1EA8087818B4E7E000FB3963 /* NemoConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NemoConnect.h; sourceTree = "<group>"; };
+		1EAAE1BB18AE1150004CCE2E /* NCCancelable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCCancelable.h; sourceTree = "<group>"; };
+		1EAAE1BC18AE230A004CCE2E /* NCSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCSerializer.h; sourceTree = "<group>"; };
+		1EAAE1BE18AE2452004CCE2E /* NCJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCJSONSerializer.h; sourceTree = "<group>"; };
+		1EAAE1BF18AE2452004CCE2E /* NCJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCJSONSerializer.m; sourceTree = "<group>"; };
+		1EAAE1C118AE25C2004CCE2E /* NCSerializationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCSerializationHandler.h; sourceTree = "<group>"; };
+		1EAAE1C218AE25C2004CCE2E /* NCSerializationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCSerializationHandler.m; sourceTree = "<group>"; };
+		1EAAE1CC18AE5E07004CCE2E /* NCDispatchFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NCDispatchFunctions.h; path = Sources/NCDispatchFunctions.h; sourceTree = "<group>"; };
+		1EAAE1CD18AE5E07004CCE2E /* NCDispatchFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NCDispatchFunctions.m; path = Sources/NCDispatchFunctions.m; sourceTree = "<group>"; };
+		1EDAFAB718FD5C7800B3D263 /* NCAuthentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NCAuthentication.h; sourceTree = "<group>"; };
+		1EDAFABB18FD79BA00B3D263 /* NCNetworkSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkSessionManager.h; sourceTree = "<group>"; };
+		1EDAFABC18FD79BA00B3D263 /* NCNetworkSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkSessionManager.m; sourceTree = "<group>"; };
+		1EDAFABE18FE5DB000B3D263 /* NCBasicAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCBasicAuthentication.h; sourceTree = "<group>"; };
+		1EDAFABF18FE5DB000B3D263 /* NCBasicAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCBasicAuthentication.m; sourceTree = "<group>"; };
+		1EDAFAC818FFC98A00B3D263 /* NCNetworkSessionManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkSessionManagerDelegate.h; sourceTree = "<group>"; };
+		1EDAFAC918FFC98A00B3D263 /* NCNetworkSessionManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkSessionManagerDelegate.m; sourceTree = "<group>"; };
+		1EF96DCB18A26C4A003CD69F /* NCWebService+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NCWebService+Extensions.h"; sourceTree = "<group>"; };
+		1EF96DCC18A26C4A003CD69F /* NCWebService+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NCWebService+Extensions.m"; sourceTree = "<group>"; };
+		1EF96DD618A27FB4003CD69F /* NCWebServiceParameterParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWebServiceParameterParser.h; sourceTree = "<group>"; };
+		1EF96DD718A27FB4003CD69F /* NCWebServiceParameterParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCWebServiceParameterParser.m; sourceTree = "<group>"; };
+		1EF96E1318A2CAEA003CD69F /* NSObject+DictionaryRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DictionaryRepresentation.h"; sourceTree = "<group>"; };
+		1EF96E1418A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DictionaryRepresentation.m"; sourceTree = "<group>"; };
+		CF1550181A7688FF00E9D07F /* NCNetworkSessionDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkSessionDownloadTask.h; sourceTree = "<group>"; };
+		CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkSessionDownloadTask.m; sourceTree = "<group>"; };
+		CF15501B1A768A3B00E9D07F /* NCNetworkPlistKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkPlistKeys.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E9F43FA18A2518C008164A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E9F440118A2518C008164A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E9F440A18A2518C008164A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E9F440F18A2518C008164A4 /* XCTest.framework in Frameworks */,
+				1E9F441518A2518C008164A4 /* libNemoConnect.a in Frameworks */,
+				1E9F441218A2518C008164A4 /* UIKit.framework in Frameworks */,
+				1E9F441018A2518C008164A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E9D78EE18AB92AE00ADD41C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1EF96E1318A2CAEA003CD69F /* NSObject+DictionaryRepresentation.h */,
+				1EF96E1418A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		1E9D78EF18AB92C300ADD41C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1EDAFAC118FEB1C800B3D263 /* Authentication */,
+				1E9D790A18AD036700ADD41C /* Network Tasks */,
+				1EAAE1BB18AE1150004CCE2E /* NCCancelable.h */,
+				1E9D78EB18AB8C8700ADD41C /* NCNetworkRequest.h */,
+				1E9D78EC18AB8C8700ADD41C /* NCNetworkRequest.m */,
+				1EDAFABB18FD79BA00B3D263 /* NCNetworkSessionManager.h */,
+				1EDAFABC18FD79BA00B3D263 /* NCNetworkSessionManager.m */,
+				1EDAFAC818FFC98A00B3D263 /* NCNetworkSessionManagerDelegate.h */,
+				1EDAFAC918FFC98A00B3D263 /* NCNetworkSessionManagerDelegate.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		1E9D78F018AB9EC600ADD41C /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				1E9F442D18A25274008164A4 /* NCWebService.h */,
+				1E9F442E18A25274008164A4 /* NCWebService.m */,
+				1E9F443018A2528E008164A4 /* NCWebService+DynamicMethod.h */,
+				1E9F443118A2528E008164A4 /* NCWebService+DynamicMethod.m */,
+				1EF96DCB18A26C4A003CD69F /* NCWebService+Extensions.h */,
+				1EF96DCC18A26C4A003CD69F /* NCWebService+Extensions.m */,
+				1EF96DD618A27FB4003CD69F /* NCWebServiceParameterParser.h */,
+				1EF96DD718A27FB4003CD69F /* NCWebServiceParameterParser.m */,
+				CF15501B1A768A3B00E9D07F /* NCNetworkPlistKeys.h */,
+			);
+			name = Webservice;
+			sourceTree = "<group>";
+		};
+		1E9D790A18AD036700ADD41C /* Network Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				1E9D78FA18AD018D00ADD41C /* NCNetworkTask.h */,
+				1E9D790718AD031000ADD41C /* NCNetworkSessionDataTask.h */,
+				1E9D790818AD031000ADD41C /* NCNetworkSessionDataTask.m */,
+				CF1550181A7688FF00E9D07F /* NCNetworkSessionDownloadTask.h */,
+				CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */,
+				1E8BEC6E18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.h */,
+				1E8BEC6F18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.m */,
+			);
+			name = "Network Tasks";
+			sourceTree = "<group>";
+		};
+		1E9F43F418A2518C008164A4 = {
+			isa = PBXGroup;
+			children = (
+				1E9F440218A2518C008164A4 /* Nemo Connect */,
+				1E9F441618A2518C008164A4 /* Nemo Connect Tests */,
+				1E9F43FF18A2518C008164A4 /* Frameworks */,
+				1E9F43FE18A2518C008164A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E9F43FE18A2518C008164A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E9F43FD18A2518C008164A4 /* libNemoConnect.a */,
+				1E9F440D18A2518C008164A4 /* Nemo Connect Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E9F43FF18A2518C008164A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E9F440018A2518C008164A4 /* Foundation.framework */,
+				1E9F440E18A2518C008164A4 /* XCTest.framework */,
+				1E9F441118A2518C008164A4 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E9F440218A2518C008164A4 /* Nemo Connect */ = {
+			isa = PBXGroup;
+			children = (
+				1E9F442C18A25274008164A4 /* Sources */,
+				1E9F440318A2518C008164A4 /* Supporting Files */,
+			);
+			path = "Nemo Connect";
+			sourceTree = "<group>";
+		};
+		1E9F440318A2518C008164A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E9F440418A2518C008164A4 /* Nemo Connect-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1E9F441618A2518C008164A4 /* Nemo Connect Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1E9F441C18A2518C008164A4 /* Nemo_Connect_Tests.m */,
+				1E9F441718A2518C008164A4 /* Supporting Files */,
+			);
+			path = "Nemo Connect Tests";
+			sourceTree = "<group>";
+		};
+		1E9F441718A2518C008164A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E9F441818A2518C008164A4 /* Nemo Connect Tests-Info.plist */,
+				1E9F441918A2518C008164A4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1E9F442C18A25274008164A4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1EA8087818B4E7E000FB3963 /* NemoConnect.h */,
+				1EAAE1C818AE5CAF004CCE2E /* Core */,
+				1E9D78F018AB9EC600ADD41C /* Webservice */,
+				1E9D78EF18AB92C300ADD41C /* Network */,
+				1E9D78EE18AB92AE00ADD41C /* Categories */,
+				1EAAE1BD18AE2439004CCE2E /* Serialization */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		1EAAE1BD18AE2439004CCE2E /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				1EAAE1BC18AE230A004CCE2E /* NCSerializer.h */,
+				1EAAE1BE18AE2452004CCE2E /* NCJSONSerializer.h */,
+				1EAAE1BF18AE2452004CCE2E /* NCJSONSerializer.m */,
+				1EAAE1C118AE25C2004CCE2E /* NCSerializationHandler.h */,
+				1EAAE1C218AE25C2004CCE2E /* NCSerializationHandler.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		1EAAE1C818AE5CAF004CCE2E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1EAAE1CC18AE5E07004CCE2E /* NCDispatchFunctions.h */,
+				1EAAE1CD18AE5E07004CCE2E /* NCDispatchFunctions.m */,
+				1E8BEC7218BB8373009E36C5 /* NCFileManager.h */,
+				1E8BEC7318BB8373009E36C5 /* NCFileManager.m */,
+			);
+			name = Core;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		1EDAFAC118FEB1C800B3D263 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				1EDAFAB718FD5C7800B3D263 /* NCAuthentication.h */,
+				1EDAFABE18FE5DB000B3D263 /* NCBasicAuthentication.h */,
+				1EDAFABF18FE5DB000B3D263 /* NCBasicAuthentication.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E9F43FC18A2518C008164A4 /* Nemo Connect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E9F442018A2518C008164A4 /* Build configuration list for PBXNativeTarget "Nemo Connect" */;
+			buildPhases = (
+				1E9F43F918A2518C008164A4 /* Sources */,
+				1E9F43FA18A2518C008164A4 /* Frameworks */,
+				1E9F43FB18A2518C008164A4 /* CopyFiles */,
+				1EAAE1C618AE2FC1004CCE2E /* Run Script - TODOs checker */,
+				1E773A4818B60ABC008796F8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Nemo Connect";
+			productName = "Nemo iOS Framework";
+			productReference = 1E9F43FD18A2518C008164A4 /* libNemoConnect.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		1E9F440C18A2518C008164A4 /* Nemo Connect Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E9F442318A2518C008164A4 /* Build configuration list for PBXNativeTarget "Nemo Connect Tests" */;
+			buildPhases = (
+				1E9F440918A2518C008164A4 /* Sources */,
+				1E9F440A18A2518C008164A4 /* Frameworks */,
+				1E9F440B18A2518C008164A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E9F441418A2518C008164A4 /* PBXTargetDependency */,
+			);
+			name = "Nemo Connect Tests";
+			productName = "Nemo iOS FrameworkTests";
+			productReference = 1E9F440D18A2518C008164A4 /* Nemo Connect Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E9F43F518A2518C008164A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NC;
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Neofonie Mobile GmbH";
+			};
+			buildConfigurationList = 1E9F43F818A2518C008164A4 /* Build configuration list for PBXProject "Nemo Connect" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1E9F43F418A2518C008164A4;
+			productRefGroup = 1E9F43FE18A2518C008164A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E9F43FC18A2518C008164A4 /* Nemo Connect */,
+				1E9F440C18A2518C008164A4 /* Nemo Connect Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E9F440B18A2518C008164A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E9F441B18A2518C008164A4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E773A4818B60ABC008796F8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#sh \"${SRCROOT}/nemo-ios-run-scripts/DocumentationCheck/checkCodeDocumentation.sh\" \"${SRCROOT}/Nemo iOS Framework\" \"${PROJECT_NAME}\" \"Test\" \"Test\"";
+		};
+		1EAAE1C618AE2FC1004CCE2E /* Run Script - TODOs checker */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - TODOs checker";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#sh \"${SRCROOT}/nemo-ios-run-scripts/Todo/findTodo.sh\" \"${SRCROOT}/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E9F43F918A2518C008164A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF15501A1A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m in Sources */,
+				1EF96DCD18A26C4A003CD69F /* NCWebService+Extensions.m in Sources */,
+				1EAAE1C318AE25C2004CCE2E /* NCSerializationHandler.m in Sources */,
+				1EDAFAC018FE5DB000B3D263 /* NCBasicAuthentication.m in Sources */,
+				1EF96DD818A27FB4003CD69F /* NCWebServiceParameterParser.m in Sources */,
+				1E9F442F18A25274008164A4 /* NCWebService.m in Sources */,
+				1EAAE1C018AE2452004CCE2E /* NCJSONSerializer.m in Sources */,
+				1EDAFACA18FFC98A00B3D263 /* NCNetworkSessionManagerDelegate.m in Sources */,
+				1EF96E1518A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m in Sources */,
+				1EDAFABD18FD79BA00B3D263 /* NCNetworkSessionManager.m in Sources */,
+				1E9F443218A2528E008164A4 /* NCWebService+DynamicMethod.m in Sources */,
+				1E8BEC7018BA9DE4009E36C5 /* NCNetworkSessionUploadTask.m in Sources */,
+				1E9D78ED18AB8C8700ADD41C /* NCNetworkRequest.m in Sources */,
+				1E8BEC7418BB8373009E36C5 /* NCFileManager.m in Sources */,
+				1E9D790918AD031000ADD41C /* NCNetworkSessionDataTask.m in Sources */,
+				1EAAE1CE18AE5E07004CCE2E /* NCDispatchFunctions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E9F440918A2518C008164A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E9F441D18A2518C008164A4 /* Nemo_Connect_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E9F441418A2518C008164A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E9F43FC18A2518C008164A4 /* Nemo Connect */;
+			targetProxy = 1E9F441318A2518C008164A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1E9F441918A2518C008164A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E9F441A18A2518C008164A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E9F441E18A2518C008164A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1E9F441F18A2518C008164A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E9F442118A2518C008164A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Nemo_Connect.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nemo Connect/Nemo Connect-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = NemoConnect;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Debug;
+		};
+		1E9F442218A2518C008164A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Nemo_Connect.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nemo Connect/Nemo Connect-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = NemoConnect;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Release;
+		};
+		1E9F442418A2518C008164A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nemo Connect/Nemo Connect-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Nemo Connect Tests/Nemo Connect Tests-Info.plist";
+				PRODUCT_NAME = "Nemo Connect Tests";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1E9F442518A2518C008164A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nemo Connect/Nemo Connect-Prefix.pch";
+				INFOPLIST_FILE = "Nemo Connect Tests/Nemo Connect Tests-Info.plist";
+				PRODUCT_NAME = "Nemo Connect Tests";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E9F43F818A2518C008164A4 /* Build configuration list for PBXProject "Nemo Connect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E9F441E18A2518C008164A4 /* Debug */,
+				1E9F441F18A2518C008164A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E9F442018A2518C008164A4 /* Build configuration list for PBXNativeTarget "Nemo Connect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E9F442118A2518C008164A4 /* Debug */,
+				1E9F442218A2518C008164A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E9F442318A2518C008164A4 /* Build configuration list for PBXNativeTarget "Nemo Connect Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E9F442418A2518C008164A4 /* Debug */,
+				1E9F442518A2518C008164A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E9F43F518A2518C008164A4 /* Project object */;
+}
