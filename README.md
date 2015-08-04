@@ -28,6 +28,19 @@ This version of the library supports iOS 7.1 and above. It's working with the `N
 Nemo Connect requires **iOS 7.1** or above. This framework is designed to use ARC.
 
 <br />  
+
+## Installation 
+
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager, which automates and simplifies the process of using 3rd-party libraries in your projects. To add NemoConnect via CocoaPods, add the following line to your `Podfile`.
+
+```ruby
+pod "NemoConnect", "~> 1.0"
+```
+
+<br />
+
 ***
 <br />
 
