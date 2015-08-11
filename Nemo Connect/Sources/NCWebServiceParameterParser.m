@@ -77,11 +77,11 @@
     return mutableServiceRootQuery;
 }
 
-- (NSDictionary *)parseHeaderParametersWithCallParameters:(NSDictionary *)parameters withParameters:(NSDictionary *)param
+- (NSDictionary *)parseWebServiceParameter:(NSString *)webServiceParameter configuration:(NSDictionary *)parameters parameters:(NSDictionary *)param
 {
     NSMutableDictionary *headerDictionary = [[NSMutableDictionary alloc] init];
 
-    id parameterObject = parameters[kNCWebServiceRequest][kNCWebServiceParameterParserHeaderParameter];
+    id parameterObject = parameters[kNCWebServiceRequest][webServiceParameter];
 
     if ([parameterObject isKindOfClass:[NSDictionary class]])
     {

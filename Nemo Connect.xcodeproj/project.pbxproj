@@ -47,6 +47,7 @@
 		1EF96DCD18A26C4A003CD69F /* NCWebService+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96DCC18A26C4A003CD69F /* NCWebService+Extensions.m */; };
 		1EF96DD818A27FB4003CD69F /* NCWebServiceParameterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96DD718A27FB4003CD69F /* NCWebServiceParameterParser.m */; };
 		1EF96E1518A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96E1418A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m */; };
+		364BE7AC11D69826A68567A4 /* NSString+HTTPQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 364BE794C8861DF4C0B3E5A4 /* NSString+HTTPQueryString.m */; };
 		CF15501A1A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +136,8 @@
 		1EF96DD718A27FB4003CD69F /* NCWebServiceParameterParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCWebServiceParameterParser.m; sourceTree = "<group>"; };
 		1EF96E1318A2CAEA003CD69F /* NSObject+DictionaryRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DictionaryRepresentation.h"; sourceTree = "<group>"; };
 		1EF96E1418A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DictionaryRepresentation.m"; sourceTree = "<group>"; };
+		364BE66A067F38CF8D0A7760 /* NSString+HTTPQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTTPQueryString.h"; sourceTree = "<group>"; };
+		364BE794C8861DF4C0B3E5A4 /* NSString+HTTPQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTTPQueryString.m"; sourceTree = "<group>"; };
 		CF1550181A7688FF00E9D07F /* NCNetworkSessionDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkSessionDownloadTask.h; sourceTree = "<group>"; };
 		CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkSessionDownloadTask.m; sourceTree = "<group>"; };
 		CF15501B1A768A3B00E9D07F /* NCNetworkPlistKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkPlistKeys.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 			children = (
 				1EF96E1318A2CAEA003CD69F /* NSObject+DictionaryRepresentation.h */,
 				1EF96E1418A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m */,
+				364BE794C8861DF4C0B3E5A4 /* NSString+HTTPQueryString.m */,
+				364BE66A067F38CF8D0A7760 /* NSString+HTTPQueryString.h */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 				1E8BEC7418BB8373009E36C5 /* NCFileManager.m in Sources */,
 				1E9D790918AD031000ADD41C /* NCNetworkSessionDataTask.m in Sources */,
 				1EAAE1CE18AE5E07004CCE2E /* NCDispatchFunctions.m in Sources */,
+				364BE7AC11D69826A68567A4 /* NSString+HTTPQueryString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

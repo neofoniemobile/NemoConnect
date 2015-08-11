@@ -12,17 +12,10 @@
 #import "NCWebService+Extensions.h"
 #import "NCWebServiceParameterParser.h"
 #import "NCNetworkTask.h"
-#import "NCNetworkSessionDownloadTask.h"
-#import "NCNetworkSessionUploadTask.h"
-#import "NCNetworkSessionDataTask.h"
 #import "NCSerializationHandler.h"
-#import "NCJSONSerializer.h"
 #import "NCNetworkRequest.h"
-#import "NCAuthentication.h"
-#import "NCBasicAuthentication.h"
 #import "NCNetworkSessionManager.h"
 #import "NCDispatchFunctions.h"
-#import "NCNetworkPlistKeys.h"
 
 @implementation NCWebService (DynamicMethod)
 
@@ -100,8 +93,8 @@
     __block NSData *bodyData;
     __block NSDictionary *parametersDictionary;
 
-    [self encodeParameters:parameters callbackBlock:^(NSDictionary *parameters, NSData *postData) {
-        parametersDictionary = parameters;
+    [self encodeParameters:parameters callbackBlock:^(NSDictionary *parametersInBlock, NSData *postData) {
+        parametersDictionary = parametersInBlock;
         bodyData = postData;
     }];
 
@@ -141,7 +134,7 @@
 {
     NSParameterAssert(self.serviceName);
 
-    NSDictionary *configuration = [self.networkServices objectForKey:self.serviceName];
+    NSDictionary *configuration = self.networkServices[self.serviceName];
 
     if (!configuration)
     {
@@ -154,10 +147,10 @@
 
         configuration = [NSDictionary dictionaryWithContentsOfFile:configurationFile];
 
-        [self.networkServices setObject:configuration forKey:self.serviceName];
+        self.networkServices[self.serviceName] = configuration;
     }
 
-    NSDictionary *networkRequestParameters = [configuration objectForKey:NSStringFromSelector(selector)];
+    NSDictionary *networkRequestParameters = configuration[NSStringFromSelector(selector)];
 
     NSAssert(networkRequestParameters, ([NSString stringWithFormat:@"[NCWebServiceAssertion] No configuration has been found for signature: %@", NSStringFromSelector(selector)]));
 
@@ -182,7 +175,7 @@
 
     NSDictionary *mappingParameters = networkRequestParameters[kNCWebServiceSerialization];
 
-    NSMutableDictionary *headerDictionary = [[parameterParser parseHeaderParametersWithCallParameters:networkRequestParameters withParameters:parameters] mutableCopy];
+    NSMutableDictionary *headerDictionary = [[parameterParser parseWebServiceParameter:kNCWebServiceParameterParserHeaderParameter configuration:networkRequestParameters parameters:parameters] mutableCopy];
 
     if (![networkRequestParameters[kNCWebServiceRequest][kNCWebServiceParameterParserHeaderParameter][kNCWebServiceParameterParserExcludeSharedHeaderParameter] boolValue])
     {
@@ -190,10 +183,16 @@
         [headerDictionary addEntriesFromDictionary:sharedHeaderDictionary];
     }
 
-    if ([headerDictionary objectForKey:kNCWebServiceParameterParserExcludeSharedHeaderParameter])
+    if (headerDictionary[kNCWebServiceParameterParserExcludeSharedHeaderParameter])
     {
         [headerDictionary removeObjectForKey:kNCWebServiceParameterParserExcludeSharedHeaderParameter];
 
+    }
+
+    NSDictionary *parametersDictionary;
+    if (networkRequestParameters[kNCWebServiceRequest][kNCWebServiceParameterParserParametersParameter])
+    {
+        parametersDictionary = [parameterParser parseWebServiceParameter:kNCWebServiceParameterParserParametersParameter configuration:networkRequestParameters parameters:parameters];
     }
 
     // request type (POST, GET, PUT, HEAD, DELETE...)
@@ -218,6 +217,7 @@
     networkRequest.headerDictionary = headerDictionary;
     networkRequest.sessionType = sessionType;
     networkRequest.bodyObject = bodyData;
+    networkRequest.parametersDictionary = parametersDictionary;
 
     if (mappingParameters)
     {
@@ -264,7 +264,7 @@
         }
 
         // store encoded objects
-        [result setObject:encodedObject forKey:key];
+        result[key] = encodedObject;
     }
 
     callbackBlock(result, bodyData);

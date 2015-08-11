@@ -24,13 +24,13 @@
 - (NSString *)parseServiceQueryString:(NSString *)serviceRootQuery parameters:(NSDictionary *)parameters;
 
 /**
- *  Request header parameter parser
+ *  Request parameters and request header parameter parser
  *
  *  @param parameters parameters from configuration
  *  @param param      parameters as keys
  *
  *  @return parsed dictionary, dictionary with replaced parameter keys
  */
-- (NSDictionary *)parseHeaderParametersWithCallParameters:(NSDictionary *)parameters withParameters:(NSDictionary *)param;
+- (NSDictionary *)parseWebServiceParameter:(NSString *)webServiceParameter configuration:(NSDictionary *)parameters parameters:(NSDictionary *)param;
 
 @end
