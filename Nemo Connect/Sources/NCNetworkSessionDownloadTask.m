@@ -9,7 +9,7 @@
 #import "NCNetworkSessionDownloadTask.h"
 #import "NCNetworkRequest.h"
 #import "NCDispatchFunctions.h"
-#import "NCNetworkPlistKeys.h"
+#import "NSString+HTTPQueryString.h"
 
 @interface NCNetworkSessionDownloadTask ()
 
@@ -46,9 +46,19 @@
 
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:requestURL];
 
-    if (self.networkRequest.bodyObject)
+    if (self.networkRequest.bodyObject && !self.networkRequest.parametersDictionary)
     {
         [urlRequest setHTTPBody:self.networkRequest.bodyObject];
+    }
+
+    if (self.networkRequest.parametersDictionary)
+    {
+        if (![urlRequest valueForHTTPHeaderField:@"Content-Type"])
+        {
+            [urlRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        }
+        NSData *bodyData = [[NSString HTTPQueryStringWithParameters:self.networkRequest.parametersDictionary] dataUsingEncoding:NSUTF8StringEncoding];
+        [urlRequest setHTTPBody:bodyData];
     }
 
     [urlRequest setHTTPMethod:self.networkRequest.type];
