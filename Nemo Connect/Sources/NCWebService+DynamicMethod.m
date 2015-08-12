@@ -114,10 +114,10 @@
             id serializer = [[serializerClass alloc] init];
 
             dispatchOnBackgroundQueue (^{
-                    [NCSerializationHandler deserializeData:response withSerializer:serializer toDeserializationClass:networkRequest.deserializationClass withCompletitionBlock:^(id serializedData, NSError *error) {
-                            completionBlock(serializedData, error, httpURLResponse);
-                        }];
-                });
+                [NCSerializationHandler deserializeData:response withSerializer:serializer toDeserializationClass:networkRequest.deserializationClass withCompletitionBlock:^(id serializedData, NSError *error) {
+                    completionBlock(serializedData, error, httpURLResponse);
+                }];
+            });
         }
         else
         {
@@ -195,6 +195,12 @@
         parametersDictionary = [parameterParser parseWebServiceParameter:kNCWebServiceParameterParserParametersParameter configuration:networkRequestParameters parameters:parameters];
     }
 
+    NSArray *filesArray;
+    if (networkRequestParameters[kNCWebServiceRequest][kNCWebServiceParameterParserFilesParameter])
+    {
+        filesArray = [parameterParser parseFilesParameterWithConfiguration:networkRequestParameters parameters:parameters];
+    }
+
     // request type (POST, GET, PUT, HEAD, DELETE...)
     NSString *requestType = networkRequestParameters[kNCWebServiceRequest][kNCWebServiceRequestMethod];
 
@@ -218,6 +224,7 @@
     networkRequest.sessionType = sessionType;
     networkRequest.bodyObject = bodyData;
     networkRequest.parametersDictionary = parametersDictionary;
+    networkRequest.filesArray = filesArray;
 
     if (mappingParameters)
     {

@@ -33,4 +33,14 @@
  */
 - (NSDictionary *)parseWebServiceParameter:(NSString *)webServiceParameter configuration:(NSDictionary *)parameters parameters:(NSDictionary *)param;
 
+/**
+ *  Request files array parameter parser
+ *
+ *  @param parameters parameters from configuration
+ *  @param param      parameters as keys
+ *
+ *  @return array with provided files
+ */
+- (NSArray *)parseFilesParameterWithConfiguration:(NSDictionary *)parameters parameters:(NSDictionary *)param;
+
 @end

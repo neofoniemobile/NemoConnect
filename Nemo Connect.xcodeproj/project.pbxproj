@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		152FB1151B7B4D1A00E1312F /* NCFileDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 152FB1141B7B4D1A00E1312F /* NCFileDescription.m */; };
 		1E8BEC7018BA9DE4009E36C5 /* NCNetworkSessionUploadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BEC6F18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.m */; };
 		1E8BEC7118BB561F009E36C5 /* NCNetworkSessionUploadTask.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E8BEC6E18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.h */; };
 		1E8BEC7418BB8373009E36C5 /* NCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BEC7318BB8373009E36C5 /* NCFileManager.m */; };
@@ -92,6 +93,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		152FB1131B7B4D1A00E1312F /* NCFileDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NCFileDescription.h; path = Sources/NCFileDescription.h; sourceTree = "<group>"; };
+		152FB1141B7B4D1A00E1312F /* NCFileDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NCFileDescription.m; path = Sources/NCFileDescription.m; sourceTree = "<group>"; };
 		1E8BEC6E18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkSessionUploadTask.h; sourceTree = "<group>"; };
 		1E8BEC6F18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkSessionUploadTask.m; sourceTree = "<group>"; };
 		1E8BEC7218BB8373009E36C5 /* NCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NCFileManager.h; path = Sources/NCFileManager.h; sourceTree = "<group>"; };
@@ -315,6 +318,8 @@
 		1EAAE1C818AE5CAF004CCE2E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				152FB1131B7B4D1A00E1312F /* NCFileDescription.h */,
+				152FB1141B7B4D1A00E1312F /* NCFileDescription.m */,
 				1EAAE1CC18AE5E07004CCE2E /* NCDispatchFunctions.h */,
 				1EAAE1CD18AE5E07004CCE2E /* NCDispatchFunctions.m */,
 				1E8BEC7218BB8373009E36C5 /* NCFileManager.h */,
@@ -451,6 +456,7 @@
 				CF15501A1A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m in Sources */,
 				1EF96DCD18A26C4A003CD69F /* NCWebService+Extensions.m in Sources */,
 				1EAAE1C318AE25C2004CCE2E /* NCSerializationHandler.m in Sources */,
+				152FB1151B7B4D1A00E1312F /* NCFileDescription.m in Sources */,
 				1EDAFAC018FE5DB000B3D263 /* NCBasicAuthentication.m in Sources */,
 				1EF96DD818A27FB4003CD69F /* NCWebServiceParameterParser.m in Sources */,
 				1E9F442F18A25274008164A4 /* NCWebService.m in Sources */,

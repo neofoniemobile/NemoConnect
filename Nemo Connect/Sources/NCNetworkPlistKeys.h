@@ -28,4 +28,5 @@ static NSInteger const kNCSerializationErrorCode = -5001;
 static NSString *const kNCWebServiceParameterParserBodyParameter = @"body";
 static NSString *const kNCWebServiceParameterParserHeaderParameter = @"header";
 static NSString *const kNCWebServiceParameterParserParametersParameter = @"parameters";
+static NSString *const kNCWebServiceParameterParserFilesParameter = @"files";
 static NSString *const kNCWebServiceParameterParserExcludeSharedHeaderParameter = @"excludeSharedHeader";
