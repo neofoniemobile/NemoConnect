@@ -48,6 +48,44 @@
 		1EF96DD818A27FB4003CD69F /* NCWebServiceParameterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96DD718A27FB4003CD69F /* NCWebServiceParameterParser.m */; };
 		1EF96E1518A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96E1418A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m */; };
 		CF15501A1A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */; };
+		CFC953181B84B97F003CB26D /* NCDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAE1CD18AE5E07004CCE2E /* NCDispatchFunctions.m */; };
+		CFC953191B84B97F003CB26D /* NCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BEC7318BB8373009E36C5 /* NCFileManager.m */; };
+		CFC9531A1B84B97F003CB26D /* NCWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F442E18A25274008164A4 /* NCWebService.m */; };
+		CFC9531B1B84B97F003CB26D /* NCWebService+DynamicMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F443118A2528E008164A4 /* NCWebService+DynamicMethod.m */; };
+		CFC9531C1B84B97F003CB26D /* NCWebService+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96DCC18A26C4A003CD69F /* NCWebService+Extensions.m */; };
+		CFC9531D1B84B97F003CB26D /* NCWebServiceParameterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96DD718A27FB4003CD69F /* NCWebServiceParameterParser.m */; };
+		CFC9531E1B84B97F003CB26D /* NCBasicAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDAFABF18FE5DB000B3D263 /* NCBasicAuthentication.m */; };
+		CFC9531F1B84B97F003CB26D /* NCNetworkSessionDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D790818AD031000ADD41C /* NCNetworkSessionDataTask.m */; };
+		CFC953201B84B97F003CB26D /* NCNetworkSessionDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */; };
+		CFC953211B84B97F003CB26D /* NCNetworkSessionUploadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BEC6F18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.m */; };
+		CFC953221B84B97F003CB26D /* NCNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D78EC18AB8C8700ADD41C /* NCNetworkRequest.m */; };
+		CFC953231B84B97F003CB26D /* NCNetworkSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDAFABC18FD79BA00B3D263 /* NCNetworkSessionManager.m */; };
+		CFC953241B84B97F003CB26D /* NCNetworkSessionManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDAFAC918FFC98A00B3D263 /* NCNetworkSessionManagerDelegate.m */; };
+		CFC953251B84B97F003CB26D /* NSObject+DictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96E1418A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m */; };
+		CFC953261B84B97F003CB26D /* NCJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAE1BF18AE2452004CCE2E /* NCJSONSerializer.m */; };
+		CFC953271B84B97F003CB26D /* NCSerializationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAE1C218AE25C2004CCE2E /* NCSerializationHandler.m */; };
+		CFC953291B84BA08003CB26D /* NemoConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EA8087818B4E7E000FB3963 /* NemoConnect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9532A1B84BA08003CB26D /* NCDispatchFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EAAE1CC18AE5E07004CCE2E /* NCDispatchFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9532B1B84BA08003CB26D /* NCFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8BEC7218BB8373009E36C5 /* NCFileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9532C1B84BA08003CB26D /* NCWebService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E9F442D18A25274008164A4 /* NCWebService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9532D1B84BA08003CB26D /* NCWebService+DynamicMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E9F443018A2528E008164A4 /* NCWebService+DynamicMethod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9532E1B84BA08003CB26D /* NCWebService+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF96DCB18A26C4A003CD69F /* NCWebService+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9532F1B84BA08003CB26D /* NCWebServiceParameterParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF96DD618A27FB4003CD69F /* NCWebServiceParameterParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953301B84BA08003CB26D /* NCNetworkPlistKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = CF15501B1A768A3B00E9D07F /* NCNetworkPlistKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953311B84BA08003CB26D /* NCAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EDAFAB718FD5C7800B3D263 /* NCAuthentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953321B84BA08003CB26D /* NCBasicAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EDAFABE18FE5DB000B3D263 /* NCBasicAuthentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953331B84BA08003CB26D /* NCNetworkTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E9D78FA18AD018D00ADD41C /* NCNetworkTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953341B84BA08003CB26D /* NCNetworkSessionDataTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E9D790718AD031000ADD41C /* NCNetworkSessionDataTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953351B84BA08003CB26D /* NCNetworkSessionDownloadTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CF1550181A7688FF00E9D07F /* NCNetworkSessionDownloadTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953361B84BA08003CB26D /* NCNetworkSessionUploadTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8BEC6E18BA9DE4009E36C5 /* NCNetworkSessionUploadTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953371B84BA08003CB26D /* NCCancelable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EAAE1BB18AE1150004CCE2E /* NCCancelable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953381B84BA08003CB26D /* NCNetworkRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E9D78EB18AB8C8700ADD41C /* NCNetworkRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC953391B84BA08003CB26D /* NCNetworkSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EDAFABB18FD79BA00B3D263 /* NCNetworkSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9533A1B84BA08003CB26D /* NCNetworkSessionManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EDAFAC818FFC98A00B3D263 /* NCNetworkSessionManagerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9533B1B84BA08003CB26D /* NSObject+DictionaryRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF96E1318A2CAEA003CD69F /* NSObject+DictionaryRepresentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9533C1B84BA08003CB26D /* NCSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EAAE1BC18AE230A004CCE2E /* NCSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9533D1B84BA08003CB26D /* NCJSONSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EAAE1BE18AE2452004CCE2E /* NCJSONSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFC9533E1B84BA08003CB26D /* NCSerializationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EAAE1C118AE25C2004CCE2E /* NCSerializationHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +176,7 @@
 		CF1550181A7688FF00E9D07F /* NCNetworkSessionDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkSessionDownloadTask.h; sourceTree = "<group>"; };
 		CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkSessionDownloadTask.m; sourceTree = "<group>"; };
 		CF15501B1A768A3B00E9D07F /* NCNetworkPlistKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkPlistKeys.h; sourceTree = "<group>"; };
+		CFC953011B84B915003CB26D /* libNemo Connect for OS X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNemo Connect for OS X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +196,13 @@
 				1E9F441518A2518C008164A4 /* libNemoConnect.a in Frameworks */,
 				1E9F441218A2518C008164A4 /* UIKit.framework in Frameworks */,
 				1E9F441018A2518C008164A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFC952FE1B84B915003CB26D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +279,7 @@
 			children = (
 				1E9F43FD18A2518C008164A4 /* libNemoConnect.a */,
 				1E9F440D18A2518C008164A4 /* Nemo Connect Tests.xctest */,
+				CFC953011B84B915003CB26D /* libNemo Connect for OS X.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -331,6 +378,38 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CFC952FF1B84B915003CB26D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC953291B84BA08003CB26D /* NemoConnect.h in Headers */,
+				CFC9532A1B84BA08003CB26D /* NCDispatchFunctions.h in Headers */,
+				CFC9532B1B84BA08003CB26D /* NCFileManager.h in Headers */,
+				CFC9532C1B84BA08003CB26D /* NCWebService.h in Headers */,
+				CFC9532D1B84BA08003CB26D /* NCWebService+DynamicMethod.h in Headers */,
+				CFC9532E1B84BA08003CB26D /* NCWebService+Extensions.h in Headers */,
+				CFC9532F1B84BA08003CB26D /* NCWebServiceParameterParser.h in Headers */,
+				CFC953301B84BA08003CB26D /* NCNetworkPlistKeys.h in Headers */,
+				CFC953311B84BA08003CB26D /* NCAuthentication.h in Headers */,
+				CFC953321B84BA08003CB26D /* NCBasicAuthentication.h in Headers */,
+				CFC953331B84BA08003CB26D /* NCNetworkTask.h in Headers */,
+				CFC953341B84BA08003CB26D /* NCNetworkSessionDataTask.h in Headers */,
+				CFC953351B84BA08003CB26D /* NCNetworkSessionDownloadTask.h in Headers */,
+				CFC953361B84BA08003CB26D /* NCNetworkSessionUploadTask.h in Headers */,
+				CFC953371B84BA08003CB26D /* NCCancelable.h in Headers */,
+				CFC953381B84BA08003CB26D /* NCNetworkRequest.h in Headers */,
+				CFC953391B84BA08003CB26D /* NCNetworkSessionManager.h in Headers */,
+				CFC9533A1B84BA08003CB26D /* NCNetworkSessionManagerDelegate.h in Headers */,
+				CFC9533B1B84BA08003CB26D /* NSObject+DictionaryRepresentation.h in Headers */,
+				CFC9533C1B84BA08003CB26D /* NCSerializer.h in Headers */,
+				CFC9533D1B84BA08003CB26D /* NCJSONSerializer.h in Headers */,
+				CFC9533E1B84BA08003CB26D /* NCSerializationHandler.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1E9F43FC18A2518C008164A4 /* Nemo Connect */ = {
 			isa = PBXNativeTarget;
@@ -369,6 +448,23 @@
 			productReference = 1E9F440D18A2518C008164A4 /* Nemo Connect Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CFC953001B84B915003CB26D /* Nemo Connect for OS X */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFC953161B84B916003CB26D /* Build configuration list for PBXNativeTarget "Nemo Connect for OS X" */;
+			buildPhases = (
+				CFC952FD1B84B915003CB26D /* Sources */,
+				CFC952FE1B84B915003CB26D /* Frameworks */,
+				CFC952FF1B84B915003CB26D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Nemo Connect for OS X";
+			productName = NemoConnect;
+			productReference = CFC953011B84B915003CB26D /* libNemo Connect for OS X.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -378,6 +474,11 @@
 				CLASSPREFIX = NC;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Neofonie Mobile GmbH";
+				TargetAttributes = {
+					CFC953001B84B915003CB26D = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
 			};
 			buildConfigurationList = 1E9F43F818A2518C008164A4 /* Build configuration list for PBXProject "Nemo Connect" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -393,6 +494,7 @@
 			targets = (
 				1E9F43FC18A2518C008164A4 /* Nemo Connect */,
 				1E9F440C18A2518C008164A4 /* Nemo Connect Tests */,
+				CFC953001B84B915003CB26D /* Nemo Connect for OS X */,
 			);
 		};
 /* End PBXProject section */
@@ -467,6 +569,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E9F441D18A2518C008164A4 /* Nemo_Connect_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFC952FD1B84B915003CB26D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC953181B84B97F003CB26D /* NCDispatchFunctions.m in Sources */,
+				CFC953191B84B97F003CB26D /* NCFileManager.m in Sources */,
+				CFC9531A1B84B97F003CB26D /* NCWebService.m in Sources */,
+				CFC9531B1B84B97F003CB26D /* NCWebService+DynamicMethod.m in Sources */,
+				CFC9531C1B84B97F003CB26D /* NCWebService+Extensions.m in Sources */,
+				CFC9531D1B84B97F003CB26D /* NCWebServiceParameterParser.m in Sources */,
+				CFC9531E1B84B97F003CB26D /* NCBasicAuthentication.m in Sources */,
+				CFC9531F1B84B97F003CB26D /* NCNetworkSessionDataTask.m in Sources */,
+				CFC953201B84B97F003CB26D /* NCNetworkSessionDownloadTask.m in Sources */,
+				CFC953211B84B97F003CB26D /* NCNetworkSessionUploadTask.m in Sources */,
+				CFC953221B84B97F003CB26D /* NCNetworkRequest.m in Sources */,
+				CFC953231B84B97F003CB26D /* NCNetworkSessionManager.m in Sources */,
+				CFC953241B84B97F003CB26D /* NCNetworkSessionManagerDelegate.m in Sources */,
+				CFC953251B84B97F003CB26D /* NSObject+DictionaryRepresentation.m in Sources */,
+				CFC953261B84B97F003CB26D /* NCJSONSerializer.m in Sources */,
+				CFC953271B84B97F003CB26D /* NCSerializationHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +748,43 @@
 			};
 			name = Release;
 		};
+		CFC953121B84B916003CB26D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CFC953131B84B916003CB26D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -652,6 +814,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CFC953161B84B916003CB26D /* Build configuration list for PBXNativeTarget "Nemo Connect for OS X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFC953121B84B916003CB26D /* Debug */,
+				CFC953131B84B916003CB26D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
