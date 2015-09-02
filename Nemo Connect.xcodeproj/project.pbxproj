@@ -48,6 +48,7 @@
 		1EF96DD818A27FB4003CD69F /* NCWebServiceParameterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96DD718A27FB4003CD69F /* NCWebServiceParameterParser.m */; };
 		1EF96E1518A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96E1418A2CAEA003CD69F /* NSObject+DictionaryRepresentation.m */; };
 		CF15501A1A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */; };
+		CF414D731B85DFC1004F4909 /* NCWebService+Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF414D721B85DFC1004F4909 /* NCWebService+Test.plist */; };
 		CFC953181B84B97F003CB26D /* NCDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAE1CD18AE5E07004CCE2E /* NCDispatchFunctions.m */; };
 		CFC953191B84B97F003CB26D /* NCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BEC7318BB8373009E36C5 /* NCFileManager.m */; };
 		CFC9531A1B84B97F003CB26D /* NCWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F442E18A25274008164A4 /* NCWebService.m */; };
@@ -176,6 +177,8 @@
 		CF1550181A7688FF00E9D07F /* NCNetworkSessionDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkSessionDownloadTask.h; sourceTree = "<group>"; };
 		CF1550191A7688FF00E9D07F /* NCNetworkSessionDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCNetworkSessionDownloadTask.m; sourceTree = "<group>"; };
 		CF15501B1A768A3B00E9D07F /* NCNetworkPlistKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCNetworkPlistKeys.h; sourceTree = "<group>"; };
+		CF414D721B85DFC1004F4909 /* NCWebService+Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NCWebService+Test.plist"; sourceTree = "<group>"; };
+		CF414D741B85DFF8004F4909 /* NCWebService+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NCWebService+Test.h"; sourceTree = "<group>"; };
 		CFC953011B84B915003CB26D /* libNemo Connect for OS X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNemo Connect for OS X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -315,6 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				1E9F441C18A2518C008164A4 /* Nemo_Connect_Tests.m */,
+				CF414D721B85DFC1004F4909 /* NCWebService+Test.plist */,
+				CF414D741B85DFF8004F4909 /* NCWebService+Test.h */,
 				1E9F441718A2518C008164A4 /* Supporting Files */,
 			);
 			path = "Nemo Connect Tests";
@@ -504,6 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF414D731B85DFC1004F4909 /* NCWebService+Test.plist in Resources */,
 				1E9F441B18A2518C008164A4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -727,6 +733,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Nemo Connect Tests/Nemo Connect Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-all_load",
+				);
 				PRODUCT_NAME = "Nemo Connect Tests";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -743,6 +755,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nemo Connect/Nemo Connect-Prefix.pch";
 				INFOPLIST_FILE = "Nemo Connect Tests/Nemo Connect Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-all_load",
+				);
 				PRODUCT_NAME = "Nemo Connect Tests";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -822,6 +840,7 @@
 				CFC953131B84B916003CB26D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

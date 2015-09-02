@@ -1,12 +1,13 @@
 //
 //  Nemo_Connect_Tests.m
-//  Nemo Connect Tests
+//  Nemo Connect
 //
 //  Copyright (c) 2015 Neofonie Mobile GmbH. All rights reserved.
 //  See LICENSE.txt for this framework's licensing information.
 //
 
 #import <XCTest/XCTest.h>
+#import "NCWebService+Test.h"
 
 @interface Nemo_Connect_Tests : XCTestCase
 
@@ -26,9 +27,25 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testURLParsing
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NCWebService *webService = [[NCWebService alloc] initWithBaseURL:[NSURL URLWithString:@"http://test.test"]];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test URL Parsing"];
+
+    webService.serviceName = @"Test";
+    NSOperation *operation = [webService testCallWithParameter:@(1) completionBlock:^(id data, NSError *const error, NSHTTPURLResponse *httpURLResponse) {
+        NSLog(@"%@", httpURLResponse);
+        [expectation fulfill];
+
+    }];
+
+    [self waitForExpectationsWithTimeout:60 handler:^(NSError *error) {
+        if (error != nil)
+        {
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+        [operation cancel];
+    }];
 }
 
 @end

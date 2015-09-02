@@ -171,8 +171,7 @@
     {
         if (serviceQueryPath)
         {
-            requestPath = [requestPath stringByAppendingPathComponent:serviceQueryPath];
-
+            requestPath = [requestPath stringByAppendingString:serviceQueryPath];
         }
     }
     else
