@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/neofoniemobile/NemoConnect.git', 
                      :tag => s.version.to_s }
 
-  s.platform     = :ios
   s.ios.deployment_target = '7.1'
+  s.osx.deployment_target = '10.8'
 
   s.source_files = 'Nemo\ Connect/Sources/**/*.{h,m}'
 end

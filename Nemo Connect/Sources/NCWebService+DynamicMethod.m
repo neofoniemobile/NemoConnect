@@ -171,8 +171,7 @@
     {
         if (serviceQueryPath)
         {
-            NSURL *requestURL = [self.serviceRootURL URLByAppendingPathComponent:serviceQueryPath];
-            requestPath = [requestURL absoluteString];
+            requestPath = [requestPath stringByAppendingString:serviceQueryPath];
         }
     }
     else

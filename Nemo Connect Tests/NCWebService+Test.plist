@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>testCallWithParameter:completionBlock:</key>
+	<dict>
+		<key>request</key>
+		<dict>
+			<key>path</key>
+			<string>/testAPI/doNotWaitForResponse?parameter=%0</string>
+			<key>method</key>
+			<string>GET</string>
+		</dict>
+		<key>serialization</key>
+		<dict>
+			<key>serializator</key>
+			<string>TestSerializator</string>
+			<key>serializedObject</key>
+			<string>TestSerializedObject</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

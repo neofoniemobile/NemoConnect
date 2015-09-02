@@ -12,5 +12,5 @@
  *  Web service dynamic implementation category extension
  */
 @interface NCWebService (DynamicMethod)
-
+- (NCNetworkRequest *)networkRequestForSelector:(SEL)selector parameters:(NSDictionary *)parameters bodyData:(NSData *)bodyData;
 @end
