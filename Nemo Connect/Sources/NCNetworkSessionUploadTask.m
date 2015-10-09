@@ -9,9 +9,9 @@
 #import "NCWebService.h"
 #import "NCNetworkSessionUploadTask.h"
 #import "NCNetworkRequest.h"
-#import "NCDispatchFunctions.h"
 #import "NCFileManager.h"
 #import "NCNetworkPlistKeys.h"
+#import "NCFileDescription.h"
 
 @interface NCNetworkSessionUploadTask ()
 
@@ -42,8 +42,54 @@
     return self;
 }
 
+- (NSData *)prepareMultipartBodyWithBoundary:(NSString *)boundary files:(NSArray *)files parameters:(NSDictionary *)parameters
+{
+    NSString *bodyBoundary = [NSString stringWithFormat:@"\r\n--%@\r\n", boundary];
+    NSString *(^contentDisposition)(NSString *, NSString *) = ^NSString *(NSString *parameter, NSString *filename) {
+        if (filename)
+        {
+            return [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n", parameter, filename];
+        }
+
+        return [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", parameter];
+    };
+
+    NSMutableData *body = [NSMutableData data];
+
+    for (NCFileDescription *fileDescription in files)
+    {
+        [body appendData:[bodyBoundary dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[contentDisposition(fileDescription.parameter, fileDescription.filename) dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", fileDescription.mimeType] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:fileDescription.fileContents];
+    }
+
+    for (NSString *parameter in parameters)
+    {
+        [body appendData:[bodyBoundary dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[contentDisposition(parameter, nil) dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[parameters[parameter] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    [body appendData:[bodyBoundary dataUsingEncoding:NSUTF8StringEncoding]];
+
+    return body;
+}
+
 - (void)prepareTask
 {
+    NSString *contentType;
+
+    if (self.networkRequest.parametersDictionary || self.networkRequest.filesArray)
+    {
+        NSString *const boundary = [NCFileManager uniqueNameWithNumberOfCharacters:16];
+        contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+        self.networkRequest.bodyObject = [self prepareMultipartBodyWithBoundary:boundary files:self.networkRequest.filesArray parameters:self.networkRequest.parametersDictionary];
+    }
+    else
+    {
+        contentType = @"application/octet-stream";
+    }
+
     NSString *name = [self createTempFileName];
 
     NSURL *fullPath = [NCFileManager saveDataToTemporaryFolder:self.networkRequest.bodyObject name:name];
@@ -56,7 +102,7 @@
 
     [urlRequest setHTTPMethod:kNCWebServiceRequestTypePost];
     [urlRequest setValue:[NSString stringWithFormat:@"%llu", bytesTotalForThisFile] forHTTPHeaderField:@"Content-Length"];
-    [urlRequest setValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
     [urlRequest setHTTPBody:self.networkRequest.bodyObject];
 
     // set network header files

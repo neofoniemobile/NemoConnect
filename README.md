@@ -61,7 +61,9 @@ Parameters must always be `NSObject`. Primitive types like `int`, `float`, `BOOL
   -  path
   -  method
   -  body
-  -  header 
+  -  header
+  -  parameters
+  -  files
 - serialization
   -  serializator
   -  serializedObject
@@ -80,6 +82,12 @@ Optional parameter. You can only pass `NSData` as a body object. Every request i
 
 #### Header
 Optional parameter almost the same as the **Body** parameter. The only different between this one is only approve dictionaries.
+
+#### Parameters
+Optional parameter. You can only pass `NSDictionary` containing `NCFileDescription` objects. If specified with `files` parameter, it will be parsed into HTTP Multipart body, otherwise it will be parsed as a standard POST/PUT query string and put into request body. `body` parameter is ignored when `parameters` parameter is specified.
+
+#### Files
+Optional parameter. You can only use it with `Upload Task`, otherwise it will be ignored. You can only pass `NSArray` containing `NCFileDescription` objects, which will be parsed into HTTP Multipart body and put into request body. Can be used together with `parameters` parameter. Specifying with `body` will overwrite `body` content.
 
 #### Serialization
 Required only when your network requests response needs to be deserialized. You have to set the serializer class name and the serialized object name. 

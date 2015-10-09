@@ -38,6 +38,21 @@ extern NSString *const kNCNetworkRequestSessionTaskTypeUpload;
 @property (nonatomic, strong) NSDictionary *headerDictionary;
 
 /**
+ *  Request parameters dictionary (applicable to POST and PUT methods)
+ *  Should be used as a replacement of bodyObject, can be used with filesArray.
+ *  If specified with bodyObject with Data or DownloadTask, then bodyObject will be ignored.
+ *  If specified with bodyObject with UploadTask, then bodyObject will be overwritten.
+ */
+@property (nonatomic, strong) NSDictionary  *parametersDictionary;
+
+/**
+ *  Request files array containing NCFileDescription objects (applicable to POST and PUT methods)
+ *  Should be used as a replacement of bodyObject, can be used with parametersDictionary
+ *  If specified with bodyObject with UploadTask, then bodyObject will be overwritten.
+ */
+@property (nonatomic, strong) NSArray *filesArray;
+
+/**
  *  Body object as NSData
  */
 @property (nonatomic, strong) NSData *bodyObject;

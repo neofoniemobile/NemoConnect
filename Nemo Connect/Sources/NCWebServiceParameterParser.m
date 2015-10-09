@@ -77,11 +77,11 @@
     return mutableServiceRootQuery;
 }
 
-- (NSDictionary *)parseHeaderParametersWithCallParameters:(NSDictionary *)parameters withParameters:(NSDictionary *)param
+- (NSDictionary *)parseWebServiceParameter:(NSString *)webServiceParameter configuration:(NSDictionary *)parameters parameters:(NSDictionary *)param
 {
     NSMutableDictionary *headerDictionary = [[NSMutableDictionary alloc] init];
 
-    id parameterObject = parameters[kNCWebServiceRequest][kNCWebServiceParameterParserHeaderParameter];
+    id parameterObject = parameters[kNCWebServiceRequest][webServiceParameter];
 
     if ([parameterObject isKindOfClass:[NSDictionary class]])
     {
@@ -136,4 +136,33 @@
 
     return headerDictionary;
 }
+
+- (NSArray *)parseFilesParameterWithConfiguration:(NSDictionary *)parameters parameters:(NSDictionary *)param
+{
+    NSArray *array;
+
+    id value = parameters[kNCWebServiceRequest][kNCWebServiceParameterParserFilesParameter];
+
+    if ([value isKindOfClass:[NSString class]])
+    {
+        NSString *pattern = @"%\\d\\[.+\\]|%\\d";
+        NSError *error;
+
+        NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
+        NSString *subString;
+
+        NSArray *matches = [regexp matchesInString:value options:0 range:NSMakeRange(0, [value length])];
+
+        if ([matches count] > 0)
+        {
+            NSTextCheckingResult *const aResult = [matches lastObject];
+
+            subString = [[value substringWithRange:aResult.range] stringByReplacingOccurrencesOfString:@"%" withString:@""];
+            array = param[subString];
+        }
+    }
+
+    return array;
+}
+
 @end
