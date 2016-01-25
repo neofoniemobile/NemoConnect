@@ -56,7 +56,7 @@
 {
     NSUInteger numberOfArguments = [[NSStringFromSelector(selector) componentsSeparatedByString:@":"] count] - 1; // the last item in the collection is empty
 
-    const char *cTypeSignature = [[@"@@:@" stringByPaddingToLength : numberOfArguments + 3 withString : @"@" startingAtIndex : 0] UTF8String];
+    const char *cTypeSignature = [[@"@@:@" stringByPaddingToLength:numberOfArguments + 3 withString:@"@" startingAtIndex:0] UTF8String];
 
     return [NSMethodSignature signatureWithObjCTypes:cTypeSignature];
 }
@@ -120,11 +120,11 @@
 
             id serializer = [[serializerClass alloc] init];
 
-            dispatchOnBackgroundQueue (^{
-                    [NCSerializationHandler deserializeData:response withSerializer:serializer toDeserializationClass:networkRequest.deserializationClass withCompletitionBlock:^(id serializedData, NSError *error) {
-                            completionBlock(serializedData, error, httpURLResponse);
-                        }];
-                });
+            dispatchOnBackgroundQueue(^{
+                [NCSerializationHandler deserializeData:response withSerializer:serializer toDeserializationClass:networkRequest.deserializationClass withCompletitionBlock:^(id serializedData, NSError *error) {
+                    completionBlock(serializedData, error, httpURLResponse);
+                }];
+            });
         }
         else
         {
@@ -141,23 +141,7 @@
 {
     NSParameterAssert(self.serviceName);
 
-    NSDictionary *configuration = [self.networkServices objectForKey:self.serviceName];
-
-    if (!configuration)
-    {
-        NSString *path = [NSStringFromClass([self class]) stringByAppendingFormat:@"+%@", self.serviceName];
-
-        // load the configuration file
-        NSString *configurationFile = [[NSBundle bundleForClass:[self class]] pathForResource:path ofType:kNCWebServicePlist];
-
-        NSAssert(configurationFile, ([NSString stringWithFormat:@"[NCWebServiceAssertion] There is now plist file has been found based on service name: %@", self.serviceName]));
-
-        configuration = [NSDictionary dictionaryWithContentsOfFile:configurationFile];
-
-        [self.networkServices setObject:configuration forKey:self.serviceName];
-    }
-
-    NSDictionary *networkRequestParameters = [configuration objectForKey:NSStringFromSelector(selector)];
+    NSDictionary *networkRequestParameters = [self.networkServiceConfiguration objectForKey:NSStringFromSelector(selector)];
 
     NSAssert(networkRequestParameters, ([NSString stringWithFormat:@"[NCWebServiceAssertion] No configuration has been found for signature: %@", NSStringFromSelector(selector)]));
 
