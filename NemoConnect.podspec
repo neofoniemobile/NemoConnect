@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'NemoConnect'
-  s.version      = '1.0.2'
+  s.version      = '1.0.3'
   s.summary      = 'A declarative networking framework that allows networking calls with minimal code.'
   s.homepage     = 'http://www.neofonie-mobile.de/'
   s.social_media_url = 'https://twitter.com/neofoniemobile'
