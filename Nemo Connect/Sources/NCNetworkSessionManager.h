@@ -33,6 +33,18 @@
 - (id)initWithOperationQueue:(NSOperationQueue *)operationQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider;
 
 /**
+ *  Designated initializer method
+ *
+ *  @param operationQueue         processing operation queue, this instance will created by the client application
+ *  @param sessionConfiguration   NSURLSessionConfiguration instance
+ *  @param authenticationProvider authentication provider
+ *  @param backgroundTaskFinishedCompletionBlock Callback block if the session has finished all background task
+ *
+ *  @return network session manager instance
+ */
+- (id)initWithOperationQueue:(NSOperationQueue *)operationQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider backgroundTaskFinishedCompletionBlock:(dispatch_block_t)backgroundTaskFinishedCompletionBlock;
+
+/**
  *  NSOperation with session download operation factory method
  *
  *  Creates an NSOperation with Session Task, based on the network request object.

@@ -33,6 +33,32 @@ NSString *const kNCWebServiceRequestTypeHead = @"HEAD ";
 
 @implementation NCWebService
 
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider backgroundTaskFinishedCompletionBlock:(dispatch_block_t)backgroundTaskFinishedCompletionBlock
+{
+    NSParameterAssert(serviceRootURL);
+    NSParameterAssert(serviceName);
+    NSParameterAssert(processingQueue);
+    NSParameterAssert(sessionConfiguration);
+
+    self = [super init];
+
+    if (self)
+    {
+        self.serviceRootURL = serviceRootURL;
+        self.serviceName = serviceName;
+        self.processingQueue = processingQueue;
+        self.authenticationProvider = authenticationProvider;
+        self.sessionManager = [[NCNetworkSessionManager alloc] initWithOperationQueue:self.processingQueue sessionConfiguration:sessionConfiguration authenticationProvider:self.authenticationProvider backgroundTaskFinishedCompletionBlock:backgroundTaskFinishedCompletionBlock];
+
+        NSString *path = [NSStringFromClass([self class]) stringByAppendingFormat:@"+%@", self.serviceName];
+        NSString *configurationFile = [[NSBundle bundleForClass:[self class]] pathForResource:path ofType:kNCWebServicePlist];
+        NSAssert(configurationFile, ([NSString stringWithFormat:@"[NCWebServiceAssertion] There is now plist file has been found based on service name: %@", self.serviceName]));
+        self.networkServiceConfiguration = [NSDictionary dictionaryWithContentsOfFile:configurationFile];
+    }
+
+    return self;
+}
+
 - (id)initWithBaseURL:(NSURL *)serviceRootURL processingQueue:(NSOperationQueue *)processingQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider
 {
     NSParameterAssert(serviceRootURL);
@@ -73,28 +99,7 @@ NSString *const kNCWebServiceRequestTypeHead = @"HEAD ";
 
 - (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider
 {
-    NSParameterAssert(serviceRootURL);
-    NSParameterAssert(serviceName);
-    NSParameterAssert(processingQueue);
-    NSParameterAssert(sessionConfiguration);
-
-    self = [super init];
-
-    if (self)
-    {
-        self.serviceRootURL = serviceRootURL;
-        self.serviceName = serviceName;
-        self.processingQueue = processingQueue;
-        self.authenticationProvider = authenticationProvider;
-        self.sessionManager = [[NCNetworkSessionManager alloc] initWithOperationQueue:self.processingQueue sessionConfiguration:sessionConfiguration authenticationProvider:self.authenticationProvider];
-
-        NSString *path = [NSStringFromClass([self class]) stringByAppendingFormat:@"+%@", self.serviceName];
-        NSString *configurationFile = [[NSBundle bundleForClass:[self class]] pathForResource:path ofType:kNCWebServicePlist];
-        NSAssert(configurationFile, ([NSString stringWithFormat:@"[NCWebServiceAssertion] There is now plist file has been found based on service name: %@", self.serviceName]));
-        self.networkServiceConfiguration = [NSDictionary dictionaryWithContentsOfFile:configurationFile];
-    }
-
-    return self;
+    return [self initWithBaseURL:serviceRootURL serviceName:serviceName processingQueue:processingQueue sessionConfiguration:sessionConfiguration authenticationProvider:authenticationProvider backgroundTaskFinishedCompletionBlock:nil];
 }
 
 - (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue authenticationProvider:(id<NCAuthentication>)authenticationProvider

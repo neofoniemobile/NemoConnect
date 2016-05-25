@@ -19,12 +19,16 @@
 @property (nonatomic, strong) NSURLSessionConfiguration *sessionConfiguration;
 @property (nonatomic, strong) NSMutableDictionary *taskDelegates;
 @property (nonatomic, strong) id<NCAuthentication> authenticationProvider;
-
+@property (nonatomic, copy) dispatch_block_t backgroundTaskFinishedCompletionBlock;
 @end
 
 @implementation NCNetworkSessionManager
-
 - (id)initWithOperationQueue:(NSOperationQueue *)operationQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider
+{
+    return [self initWithOperationQueue:operationQueue sessionConfiguration:sessionConfiguration authenticationProvider:authenticationProvider backgroundTaskFinishedCompletionBlock:nil];
+}
+
+- (id)initWithOperationQueue:(NSOperationQueue *)operationQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider backgroundTaskFinishedCompletionBlock:(dispatch_block_t)backgroundTaskFinishedCompletionBlock
 {
     self = [super init];
 
@@ -35,6 +39,7 @@
         self.urlSession = [NSURLSession sessionWithConfiguration:self.sessionConfiguration delegate:self delegateQueue:self.operationQueue];
         self.authenticationProvider = authenticationProvider;
         self.taskDelegates = [[NSMutableDictionary alloc] init];
+        self.backgroundTaskFinishedCompletionBlock = backgroundTaskFinishedCompletionBlock;
     }
 
     return self;
@@ -205,6 +210,14 @@
     NCNetworkSessionManagerDelegate *delegate = [self delegateForTask:dataTask];
 
     [delegate URLSession:session dataTask:dataTask didReceiveData:data];
+}
+
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session
+{
+    if (self.backgroundTaskFinishedCompletionBlock)
+    {
+        self.backgroundTaskFinishedCompletionBlock();
+    }
 }
 
 @end

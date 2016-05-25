@@ -156,6 +156,20 @@ typedef void (^NCNetworkDownloaderProgressBlock)(float progress);
 - (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider;
 
 /**
+ *  Designated initializer with service root, session configuration, working queue and auth. provider
+ *
+ *  @param serviceRootURL The API URL
+ *  @param serviceName Should be matched as the service plist file and the category name of the service
+ *  @param processingQueue Network operations processing queue
+ *  @param sessionConfiguration   NSURLSessionConfiguration instance
+ *  @param authenticationProvider NCAuthentication instance
+ *  @param backgroundTaskFinishedCompletionBlock Callback block if the session has finished all background task
+ *
+ *  @return web service instance
+ */
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider backgroundTaskFinishedCompletionBlock:(dispatch_block_t)backgroundTaskFinishedCompletionBlock;
+
+/**
  *  Header dictionary for every service call. If one service call should exclude this parameter, it should be inserted in the plist file
  *
  *  @return web service instance
