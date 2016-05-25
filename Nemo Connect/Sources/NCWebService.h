@@ -48,12 +48,17 @@ typedef void (^NCNetworkDownloaderProgressBlock)(float progress);
 /**
  *  Service name, should be matched as the service plist file and the category name of the service
  */
-@property (nonatomic, copy, readwrite) NSString *serviceName;
+@property (nonatomic, copy, readonly) NSString *serviceName;
 
 /**
  *  Network requests configuration from the plist, using for caching
  */
-@property (nonatomic, strong) NSMutableDictionary *networkServices;
+@property (nonatomic, strong) NSMutableDictionary *networkServices __deprecated_msg("This is not used anymore. Use networkServiceConfiguration instead.");
+
+/**
+ *  Network requests configuration from the plist
+ */
+@property (nonatomic, copy, readonly) NSDictionary *networkServiceConfiguration;
 
 /**
  *  Authentication provider instance
@@ -68,7 +73,7 @@ typedef void (^NCNetworkDownloaderProgressBlock)(float progress);
  *  @param serviceRootURL The API URL
  *  @return web service instance
  */
-- (id)initWithBaseURL:(NSURL *)serviceRootURL;
+- (id)initWithBaseURL:(NSURL *)serviceRootURL __deprecated_msg("Use initializer with serviceName parameter instead.");
 
 /**
  *  Designated initializer method with service root parameter and processing queue
@@ -78,7 +83,7 @@ typedef void (^NCNetworkDownloaderProgressBlock)(float progress);
  *
  *  @return web service instance
  */
-- (id)initWithBaseURL:(NSURL *)serviceRootURL processingQueue:(NSOperationQueue *)processingQueue;
+- (id)initWithBaseURL:(NSURL *)serviceRootURL processingQueue:(NSOperationQueue *)processingQueue __deprecated_msg("Use initializer with serviceName parameter instead.");
 
 /**
  *  Designated initializer method with service root parameter, processing queue and authentication provider instance
@@ -89,7 +94,7 @@ typedef void (^NCNetworkDownloaderProgressBlock)(float progress);
  *
  *  @return web service instance
  */
-- (id)initWithBaseURL:(NSURL *)serviceRootURL processingQueue:(NSOperationQueue *)processingQueue authenticationProvider:(id<NCAuthentication>)authenticationProvider;
+- (id)initWithBaseURL:(NSURL *)serviceRootURL processingQueue:(NSOperationQueue *)processingQueue authenticationProvider:(id<NCAuthentication>)authenticationProvider __deprecated_msg("Use initializer with serviceName parameter instead.");
 
 /**
  *  Designated initializer with service root, session configuration, working queue and auth. provider
@@ -101,7 +106,54 @@ typedef void (^NCNetworkDownloaderProgressBlock)(float progress);
  *
  *  @return web service instance
  */
-- (id)initWithBaseURL:(NSURL *)serviceRootURL processingQueue:(NSOperationQueue *)processingQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider;
+- (id)initWithBaseURL:(NSURL *)serviceRootURL processingQueue:(NSOperationQueue *)processingQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider __deprecated_msg("Use initializer with serviceName parameter instead.");
+
+/**
+ *  Designated initializer method with service root parameter. The processing queue will be in this case the current queue
+ *
+ *  The processing queue will be the current queue that launched the current operation
+ *
+ *  @param serviceRootURL The API URL
+ *  @param serviceName Should be matched as the service plist file and the category name of the service
+ *  @return web service instance
+ */
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName;
+
+/**
+ *  Designated initializer method with service root parameter and processing queue
+ *
+ *  @param serviceRootURL The API URL
+ *  @param serviceName Should be matched as the service plist file and the category name of the service
+ *  @param processingQueue Network operations processing queue
+ *
+ *  @return web service instance
+ */
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue;
+
+/**
+ *  Designated initializer method with service root parameter, processing queue and authentication provider instance
+ *
+ *  @param serviceRootURL The API URL
+ *  @param serviceName Should be matched as the service plist file and the category name of the service
+ *  @param processingQueue Network operations processing queue
+ *  @param authenticationProvider NCAuthentication instance
+ *
+ *  @return web service instance
+ */
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue authenticationProvider:(id<NCAuthentication>)authenticationProvider;
+
+/**
+ *  Designated initializer with service root, session configuration, working queue and auth. provider
+ *
+ *  @param serviceRootURL The API URL
+ *  @param serviceName Should be matched as the service plist file and the category name of the service
+ *  @param processingQueue Network operations processing queue
+ *  @param sessionConfiguration   NSURLSessionConfiguration instance
+ *  @param authenticationProvider NCAuthentication instance
+ *
+ *  @return web service instance
+ */
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider;
 
 /**
  *  Header dictionary for every service call. If one service call should exclude this parameter, it should be inserted in the plist file

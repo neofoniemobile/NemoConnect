@@ -11,6 +11,7 @@
 #import "NCBasicAuthentication.h"
 #import "NCAuthentication.h"
 #import "NCNetworkSessionManager.h"
+#import "NCNetworkPlistKeys.h"
 
 NSString *const kNCWebServiceRequestTypeGet = @"GET ";
 NSString *const kNCWebServiceRequestTypePost = @"POST ";
@@ -23,8 +24,10 @@ NSString *const kNCWebServiceRequestTypeHead = @"HEAD ";
 
 @property (nonatomic, strong, readwrite) NSOperationQueue *processingQueue;
 @property (nonatomic, copy, readwrite) NSURL *serviceRootURL;
+@property (nonatomic, copy, readwrite) NSString *serviceName;
 @property (nonatomic, strong, readwrite) NCNetworkSessionManager *sessionManager;
 @property (nonatomic, strong, readwrite) id<NCAuthentication> authenticationProvider;
+@property (nonatomic, copy, readwrite) NSDictionary *networkServiceConfiguration;
 
 @end
 
@@ -43,7 +46,6 @@ NSString *const kNCWebServiceRequestTypeHead = @"HEAD ";
         self.serviceRootURL = serviceRootURL;
         self.processingQueue = processingQueue;
         self.authenticationProvider = authenticationProvider;
-        self.networkServices = [[NSMutableDictionary alloc] init];
         self.sessionManager = [[NCNetworkSessionManager alloc] initWithOperationQueue:self.processingQueue sessionConfiguration:sessionConfiguration authenticationProvider:self.authenticationProvider];
     }
 
@@ -67,6 +69,51 @@ NSString *const kNCWebServiceRequestTypeHead = @"HEAD ";
     NSOperationQueue *processingQueue = [NSOperationQueue currentQueue];
 
     return [self initWithBaseURL:serviceRootURL processingQueue:processingQueue];
+}
+
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration authenticationProvider:(id<NCAuthentication>)authenticationProvider
+{
+    NSParameterAssert(serviceRootURL);
+    NSParameterAssert(serviceName);
+    NSParameterAssert(processingQueue);
+    NSParameterAssert(sessionConfiguration);
+
+    self = [super init];
+
+    if (self)
+    {
+        self.serviceRootURL = serviceRootURL;
+        self.serviceName = serviceName;
+        self.processingQueue = processingQueue;
+        self.authenticationProvider = authenticationProvider;
+        self.sessionManager = [[NCNetworkSessionManager alloc] initWithOperationQueue:self.processingQueue sessionConfiguration:sessionConfiguration authenticationProvider:self.authenticationProvider];
+
+        NSString *path = [NSStringFromClass([self class]) stringByAppendingFormat:@"+%@", self.serviceName];
+        NSString *configurationFile = [[NSBundle bundleForClass:[self class]] pathForResource:path ofType:kNCWebServicePlist];
+        NSAssert(configurationFile, ([NSString stringWithFormat:@"[NCWebServiceAssertion] There is now plist file has been found based on service name: %@", self.serviceName]));
+        self.networkServiceConfiguration = [NSDictionary dictionaryWithContentsOfFile:configurationFile];
+    }
+
+    return self;
+}
+
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue authenticationProvider:(id<NCAuthentication>)authenticationProvider
+{
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+
+    return [self initWithBaseURL:serviceRootURL serviceName:serviceName processingQueue:processingQueue sessionConfiguration:sessionConfiguration authenticationProvider:authenticationProvider];
+}
+
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName processingQueue:(NSOperationQueue *)processingQueue
+{
+    return [self initWithBaseURL:serviceRootURL serviceName:serviceName processingQueue:processingQueue authenticationProvider:nil];
+}
+
+- (id)initWithBaseURL:(NSURL *)serviceRootURL serviceName:(NSString *)serviceName
+{
+    NSOperationQueue *processingQueue = [NSOperationQueue currentQueue];
+
+    return [self initWithBaseURL:serviceRootURL serviceName:serviceName processingQueue:processingQueue];
 }
 
 + (NSDictionary *)sharedHeaderDictionary
