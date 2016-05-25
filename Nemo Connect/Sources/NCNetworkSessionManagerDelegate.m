@@ -98,15 +98,23 @@
     {
         float progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
 
-        // The OS calls it with totalBytesExpectedToWrite = -1
-        if (progress < 0)
+        if (totalBytesExpectedToWrite < 0)
         {
-            progress = 0;
+            // If it is -1, return with totalBytes
+            progress = totalBytesWritten;
         }
-
-        if (progress > 1)
+        else
         {
-            progress = 1;
+            // The OS calls it with totalBytesExpectedToWrite = -1
+            if (progress < 0)
+            {
+                progress = 0;
+            }
+
+            if (progress > 1)
+            {
+                progress = 1;
+            }
         }
 
         self.progressBlock(progress);

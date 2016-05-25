@@ -16,7 +16,7 @@
 {
     NSMutableString *mutableServiceRootQuery = [serviceRootQuery mutableCopy];
 
-    NSString *pattern = @"%\\d\\[.+\\]|%\\d";
+    NSString *pattern = @"%\\d\\[\\w+\\]|%\\d";
     NSError *error;
 
     NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
@@ -92,7 +92,7 @@
 
             if ([value isKindOfClass:[NSString class]])
             {
-                NSString *pattern = @"%\\d\\[.+\\]|%\\d";
+                NSString *pattern = @"%\\d\\[\\w+\\]|%\\d";
                 NSError *error;
 
                 NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
